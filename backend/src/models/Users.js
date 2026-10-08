@@ -29,7 +29,8 @@ const userSchema = new mongoose.Schema(
         },
 
         workspaceId: {
-            type: String,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Workspace",
             default: null
         }
     },
