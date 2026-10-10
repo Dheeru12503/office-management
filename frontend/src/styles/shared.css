@@ -1,0 +1,182 @@
+@theme inline {
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-green: var(--green);
+  --color-green-dark: var(--green-dark);
+  --color-green-soft: var(--green-soft);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.panel {
+  @apply rounded-[17px] bg-surface shadow-[var(--shadow)];
+  padding: 25px; border: 1px solid rgba(226, 234, 228, 0.9); animation: rise-in 0.35s ease both;
+}
+@keyframes rise-in {
+  from {
+    opacity: 0; transform: translateY(6px);
+  }
+  to {
+    opacity: 1; transform: translateY(0);
+  }
+}
+.panelHeader {
+  @apply flex items-start justify-between gap-4;
+  margin-bottom: 20px;
+}
+.panelTitleGroup {
+  @apply flex items-start gap-3;
+}
+.panelIcon {
+  @apply grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-green-soft text-green;
+}
+.panelTitle {
+  @apply text-[17px] font-extrabold;
+  margin: 1px 0 3px;
+  letter-spacing: -0.35px;
+}
+.panelSubtitle {
+  @apply text-xs text-muted;
+  margin: 0;
+  line-height: 1.5;
+}
+.formGrid {
+  @apply grid grid-cols-2 gap-[15px];
+}
+.formGridThree {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.field {
+  @apply grid gap-[7px];
+}
+.fieldWide {
+  @apply col-span-full;
+}
+.fieldLabel {
+  @apply text-xs font-bold text-[#52615b];
+}
+.input,
+.select {
+  @apply w-full rounded-[9px] bg-white px-3 py-[10px] text-[13px] text-ink;
+  min-height: 43px; border: 1px solid #dfe7e1; outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.input::placeholder {
+  @apply text-[#a4afaa];
+}
+.input:hover,
+.select:hover {
+  border-color: #b9cdc1;
+}
+.input:focus,
+.select:focus {
+  @apply shadow-[0_0_0_3px_rgba(23,107,85,0.1)];
+  border-color: #4a9a7c;
+}
+.input[type="date"] {
+  color: #4c5a54;
+}
+.button {
+  @apply inline-flex min-h-[39px] items-center justify-center gap-2 rounded-[9px] bg-green px-[14px] py-[9px] text-xs font-bold text-white;
+  border: 1px solid transparent;
+  white-space: nowrap; transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+}
+.button:hover {
+  @apply bg-green-dark shadow-[0_5px_13px_rgba(23,107,85,0.16)];
+  transform: translateY(-1px);
+}
+.buttonSecondary {
+  @apply bg-white text-[#53615b];
+  border-color: #e0e8e2;
+}
+.buttonSecondary:hover {
+  @apply bg-[#f7faf8] text-green-dark;
+  border-color: #c4d7ca;
+  box-shadow: none;
+}
+.buttonDanger {
+  @apply bg-white text-[#b74b4b];
+  border-color: #f0dddd;
+}
+.buttonDanger:hover {
+  @apply bg-[#fff7f7] text-[#9c3838];
+  border-color: #e6c4c4;
+  box-shadow: none;
+}
+.buttonSmall {
+  @apply min-h-8 px-[10px] py-1.5 text-[11px];
+}
+.buttonIcon {
+  @apply size-[34px] min-h-[34px] p-0;
+}
+.message {
+  @apply flex items-start gap-2 rounded-[9px] bg-[#f0f8f3] px-3 py-[10px] text-xs leading-[1.5] text-[#276c51];
+  margin: 0 0 16px; border: 1px solid #d9eae0;
+}
+.messageError {
+  @apply bg-[#fff6f6] text-[#a93e3e];
+  border-color: #f1dada;
+}
+.metricsGrid {
+  @apply grid grid-cols-3 gap-[14px];
+  margin: 0 0 22px;
+}
+.progressMetric {
+  @apply flex flex-col justify-center;
+}
+.progressMetricTop {
+  @apply flex items-center justify-between;
+}
+.progressValue {
+  @apply text-green text-[17px] font-extrabold;
+  font-family: "Avenir Next", Inter, "Segoe UI", sans-serif;
+}
+.progressTrack {
+  @apply h-[7px] w-full overflow-hidden;
+  margin: 13px 0 8px; border-radius: 99px; background: #eaf0ec;
+}
+.progressFill {
+  @apply block h-full rounded-[inherit];
+  background: linear-gradient(90deg, #2a8965, #82c3a0); transition: width 0.35s ease;
+}
+.inlineLoading {
+  @apply flex items-center gap-3 text-xs text-muted;
+  min-height: 66px;
+}
+.srOnly {
+  @apply absolute size-px overflow-hidden whitespace-nowrap;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 700px) {
+  .panel {
+    @apply rounded-[14px] p-[19px];
+  }
+  .metricsGrid {
+    gap: 9px;
+  }
+}
+@media (max-width: 520px) {
+  .panel {
+    @apply p-4;
+  }
+  .panelHeader {
+    margin-bottom: 16px;
+  }
+  .metricsGrid {
+    @apply grid-cols-1;
+  }
+}

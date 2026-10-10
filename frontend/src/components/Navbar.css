@@ -1,0 +1,66 @@
+.topbar {
+  @apply sticky top-0 z-20 flex items-center justify-between;
+  min-height: 76px; padding: 0 max(28px, calc((100vw - 1180px) / 2)); border-bottom: 1px solid rgba(226, 234, 228, 0.88);
+  background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(16px);
+}
+.brand {
+  @apply inline-flex items-center gap-[11px] text-ink;
+  font-family: "Avenir Next", Inter, "Segoe UI", sans-serif; font-size: 15px;
+  font-weight: 800; letter-spacing: -0.3px;
+}
+.brand:hover {
+  color: var(--ink);
+}
+.brandMark {
+  @apply grid h-[38px] w-[38px] place-items-center rounded-xl text-white;
+  background: var(--green); box-shadow: 0 6px 14px rgba(23, 107, 85, 0.2);
+}
+.brandSub {
+  display: block; margin-top: 1px; color: #8b9691;
+  font-family: "Avenir Next", Inter, "Segoe UI", sans-serif; font-size: 10px; font-weight: 600;
+  letter-spacing: 1.1px; text-transform: uppercase;
+}
+.navUser {
+  @apply flex items-center gap-3;
+}
+.userAvatar {
+  @apply grid h-[38px] w-[38px] place-items-center rounded-full;
+  border: 1px solid #dcece3;
+  color: var(--green); background: #f0f7f3; font-size: 13px;
+  font-weight: 700; text-transform: uppercase;
+}
+.userMeta {
+  @apply grid gap-px;
+}
+.userName {
+  color: var(--ink); font-size: 13px; font-weight: 700;
+}
+.userRole {
+  color: #8a9690; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.5px; text-transform: capitalize;
+}
+@media (max-width: 700px) {
+  .topbar {
+    min-height: 66px; padding: 0 18px;
+  }
+  .userMeta {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+  .brand {
+    font-size: 13px;
+  }
+  .brandMark {
+    width: 35px; height: 35px;
+  }
+  .navUser {
+    gap: 8px;
+  }
+  .userAvatar {
+    width: 34px; height: 34px;
+  }
+  .navUser .button {
+    min-height: 34px; padding: 7px 9px; font-size: 11px;
+  }
+}

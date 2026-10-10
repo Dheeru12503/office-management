@@ -1,0 +1,59 @@
+.appPage {
+  @apply min-h-screen pb-14;
+  background: radial-gradient(ellipse at 90% 0%, rgba(216, 240, 229, 0.42), transparent 32rem),
+    var(--canvas);
+}
+.dashboardContent {
+  width: min(1180px, calc(100% - 56px)); margin: 0 auto; padding-top: 44px;
+}
+.pageHeading {
+  @apply flex items-end justify-between gap-5;
+  margin-bottom: 30px;
+}
+.eyebrow {
+  @apply inline-flex items-center gap-[7px] text-[11px] font-bold text-green;
+  margin-bottom: 10px;
+  font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase;
+}
+.pageHeading h1 {
+  margin: 0; font-size: clamp(26px, 3vw, 34px); font-weight: 800;
+  letter-spacing: -1.35px; line-height: 1.2;
+}
+.pageHeading p {
+  margin: 9px 0 0; color: var(--muted); font-size: 14px;
+  line-height: 1.6;
+}
+.sectionStack {
+  @apply grid gap-[22px];
+}
+.sectionStack > .panel:nth-child(2) {
+  animation-delay: 0.06s;
+}
+@media (max-width: 700px) {
+  .dashboardContent {
+    width: min(100% - 32px, 580px); padding-top: 30px;
+  }
+  .pageHeading {
+    align-items: flex-start; margin-bottom: 23px;
+  }
+  .pageHeading h1 {
+    font-size: 27px;
+  }
+}
+@media (max-width: 520px) {
+  .dashboardContent {
+    width: calc(100% - 24px); padding-top: 24px;
+  }
+  .pageHeading {
+    display: block;
+  }
+  .pageHeading h1 {
+    font-size: 24px;
+  }
+  .pageHeading p {
+    font-size: 12px;
+  }
+  .sectionStack {
+    gap: 14px;
+  }
+}

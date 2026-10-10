@@ -1,0 +1,125 @@
+.authPage {
+  @apply relative grid min-h-screen bg-white;
+  grid-template-columns: minmax(300px, 0.9fr) minmax(440px, 1.1fr); overflow: hidden;
+}
+.authAside {
+  @apply relative flex min-h-full flex-col justify-between overflow-hidden text-white;
+  padding: 42px clamp(30px, 5vw, 78px); background: radial-gradient(circle at 80% 25%, rgba(149, 212, 179, 0.16), transparent 21rem),
+    linear-gradient(145deg, #123e32, #176b55 72%, #218060);
+}
+.authAside::after,
+.authAside::before {
+  position: absolute; z-index: 0; border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%; content: ""; pointer-events: none;
+}
+.authAside::before {
+  width: 480px; height: 480px; right: -250px;
+  bottom: -200px;
+}
+.authAside::after {
+  width: 320px; height: 320px; right: -170px;
+  bottom: -120px;
+}
+.authBrand,
+.authAsideCopy,
+.authAsideFoot {
+  position: relative; z-index: 1;
+}
+.authBrand {
+  @apply inline-flex items-center gap-[11px] text-white;
+  font-family: "Avenir Next", Inter, "Segoe UI", sans-serif; font-size: 15px;
+  font-weight: 800;
+}
+.authBrandMark {
+  @apply grid h-10 w-10 place-items-center rounded-xl;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.12);
+}
+.authAsideCopy {
+  max-width: 470px; margin: 50px 0;
+}
+.authAsideCopy h1 {
+  margin: 0 0 18px; color: white; font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700; letter-spacing: -2px; line-height: 1.12;
+}
+.authAsideCopy p {
+  max-width: 390px; color: rgba(240, 251, 244, 0.76); font-size: 14px;
+  line-height: 1.8;
+}
+.authAsideFoot {
+  color: rgba(240, 251, 244, 0.58); font-size: 11px;
+}
+.authMain {
+  @apply grid items-center justify-items-center;
+  padding: 42px 28px;
+}
+.authCard {
+  width: min(420px, 100%);
+}
+.authCard h2 {
+  margin: 0 0 8px; font-size: 29px; font-weight: 800;
+  letter-spacing: -1.15px;
+}
+.authIntro {
+  @apply mb-[26px] text-[13px] text-muted;
+  margin-top: 0;
+  line-height: 1.6;
+}
+.authForm {
+  @apply grid gap-[15px];
+}
+.authForm .field {
+  position: relative;
+}
+.authInputIcon {
+  position: absolute; top: 37px; left: 13px;
+  display: flex; color: #94a29a; pointer-events: none;
+}
+.authForm .input,
+.authForm .select {
+  @apply pl-[38px];
+}
+.authForm .input,
+.authForm .select {
+  min-height: 46px;
+}
+.authSubmit {
+  @apply min-h-[46px] w-full text-[13px];
+  margin-top: 4px;
+}
+.authFooter {
+  @apply mt-[23px] text-center text-xs text-[#7c8983];
+  margin-bottom: 0;
+}
+.authFooter a {
+  font-weight: 700;
+}
+.authMessage {
+  margin-bottom: 16px;
+}
+@media (max-width: 900px) {
+  .authPage {
+    grid-template-columns: minmax(260px, 0.8fr) minmax(390px, 1.2fr);
+  }
+}
+@media (max-width: 700px) {
+  .authPage {
+    @apply block min-h-screen px-[18px];
+    background: radial-gradient(ellipse at 50% 0%, #e3f2e9, transparent 25rem),
+      #f7faf8;
+  }
+  .authAside {
+    min-height: auto; margin: 0 -18px; padding: 21px 23px;
+  }
+  .authAsideCopy,
+  .authAsideFoot {
+    @apply hidden;
+  }
+  .authMain {
+    min-height: calc(100vh - 82px); padding: 28px 0;
+  }
+  .authCard {
+    @apply rounded-[17px] bg-white px-[22px] py-[25px] shadow-[var(--shadow)];
+    border: 1px solid #e8efea;
+  }
+}

@@ -1,0 +1,51 @@
+.workspaceRow {
+  @apply flex items-center justify-between gap-4 rounded-xl bg-[#fbfdfb] p-[15px];
+  min-height: 78px; border: 1px solid #e8eee9;
+}
+.workspaceCreate {
+  @apply flex items-end gap-3 rounded-xl bg-[#fbfdfb] p-[15px];
+  max-width: 620px; border: 1px solid #e8eee9;
+}
+.workspaceNameField {
+  flex: 1;
+}
+.workspaceEdit {
+  @apply flex w-full items-center gap-[10px];
+}
+.workspaceNameInput {
+  max-width: 420px;
+}
+.workspaceIdentity {
+  @apply flex items-center gap-3;
+  min-width: 0;
+}
+.workspaceGlyph {
+  @apply grid h-[42px] w-[42px] shrink-0 place-items-center rounded-xl bg-[#e8f4ee] text-green;
+}
+.workspaceName {
+  overflow-wrap: anywhere; color: var(--ink); font-size: 14px;
+  font-weight: 700;
+}
+.workspaceCaption {
+  display: block; margin-top: 4px; color: #8c9892;
+  font-size: 11px;
+}
+.buttonGroup,
+.todoActions {
+  @apply flex flex-wrap items-center gap-[7px];
+}
+@media (max-width: 520px) {
+  .workspaceRow {
+    align-items: flex-start; flex-direction: column;
+  }
+  .workspaceRow .buttonGroup {
+    width: 100%;
+  }
+  .workspaceCreate,
+  .workspaceEdit {
+    align-items: stretch; flex-direction: column;
+  }
+  .workspaceNameInput {
+    max-width: none;
+  }
+}
