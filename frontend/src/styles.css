@@ -1,5 +1,3 @@
-@import "tailwindcss/theme";
-@import "tailwindcss/utilities";
 @import "./styles/shared.css";
 @import "./styles/DashboardLayout.css";
 @import "./styles/AuthLayout.css";

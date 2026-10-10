@@ -1,10 +1,18 @@
 .topbar {
-  @apply sticky top-0 z-20 flex items-center justify-between;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   min-height: 76px; padding: 0 max(28px, calc((100vw - 1180px) / 2)); border-bottom: 1px solid rgba(226, 234, 228, 0.88);
   background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(16px);
 }
 .brand {
-  @apply inline-flex items-center gap-[11px] text-ink;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ink);
   font-family: "Avenir Next", Inter, "Segoe UI", sans-serif; font-size: 15px;
   font-weight: 800; letter-spacing: -0.3px;
 }
@@ -12,7 +20,12 @@
   color: var(--ink);
 }
 .brandMark {
-  @apply grid h-[38px] w-[38px] place-items-center rounded-xl text-white;
+  display: grid;
+  height: 38px;
+  width: 38px;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
   background: var(--green); box-shadow: 0 6px 14px rgba(23, 107, 85, 0.2);
 }
 .brandSub {
@@ -21,16 +34,23 @@
   letter-spacing: 1.1px; text-transform: uppercase;
 }
 .navUser {
-  @apply flex items-center gap-3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .userAvatar {
-  @apply grid h-[38px] w-[38px] place-items-center rounded-full;
+  display: grid;
+  height: 38px;
+  width: 38px;
+  place-items: center;
+  border-radius: 9999px;
   border: 1px solid #dcece3;
   color: var(--green); background: #f0f7f3; font-size: 13px;
   font-weight: 700; text-transform: uppercase;
 }
 .userMeta {
-  @apply grid gap-px;
+  display: grid;
+  gap: 1px;
 }
 .userName {
   color: var(--ink); font-size: 13px; font-weight: 700;

@@ -5,32 +5,49 @@
   margin: 0;
 }
 .todoFormSection {
-  @apply border-t border-[#edf1ee] pt-[19px];
+  border-top-width: 1px;
+  border-color: #edf1ee;
+  padding-top: 19px;
 }
 .todoFormIntro {
-  @apply flex items-center gap-[10px];
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 15px;
 }
 .smallIcon {
-  @apply grid h-[31px] w-[31px] place-items-center rounded-[10px] text-green;
+  display: grid;
+  height: 31px;
+  width: 31px;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--green);
   background: #edf6f0;
 }
 .subsectionTitle {
-  @apply mb-0.5 text-[13px] font-extrabold;
+  margin-bottom: 2px;
+  font-size: 13px;
+  font-weight: 800;
   margin: 0;
 }
 .todoCreateForm {
-  @apply items-end;
+  align-items: flex-end;
 }
 .todoCreateAction .button {
   min-height: 43px;
 }
 .filterGroup {
-  @apply flex rounded-[9px] bg-[#f8faf8] p-[3px];
+  display: flex;
+  border-radius: 9px;
+  background-color: #f8faf8;
+  padding: 3px;
   border: 1px solid #e6ece8;
 }
 .filterButton {
-  @apply inline-flex items-center gap-[6px] rounded-md;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 6px;
   padding: 6px 9px; border: 0;
   color: #7c8983; background: transparent; font-size: 10px;
   font-weight: 700; white-space: nowrap;
@@ -39,13 +56,16 @@
   color: #8d9992; font-size: 9px;
 }
 .filterButton.isActive {
-  @apply bg-white text-green shadow-[0_1px_4px_rgba(24,44,32,0.09)];
+  color: var(--green);
+  box-shadow: 0 1px 4px rgba(24,44,32,0.09);
 }
 .filterButton.isActive span {
   color: var(--green);
 }
 .metricCard {
-  @apply relative overflow-hidden rounded-[13px];
+  position: relative;
+  overflow: hidden;
+  border-radius: 13px;
   min-height: 106px; padding: 17px 18px; border: 1px solid #e7ede8;
   background: linear-gradient(135deg, #fff 55%, #f3f9f5);
 }
@@ -55,89 +75,152 @@
   background: rgba(216, 240, 229, 0.46); content: "";
 }
 .metricLabel {
-  @apply mb-[9px] block text-[#74817b];
+  margin-bottom: 9px;
+  display: block;
+  color: #74817b;
   font-size: 11px; font-weight: 700;
 }
 .metricValue {
-  @apply block text-ink text-[26px] font-extrabold tracking-[-1px];
+  display: block;
+  color: var(--ink);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -1px;
   font-family: "Avenir Next", Inter, "Segoe UI", sans-serif;
   line-height: 1;
 }
 .metricHint {
-  @apply mt-[7px] block text-[#8d9993];
+  margin-top: 7px;
+  display: block;
+  color: #8d9993;
   font-size: 10px;
 }
 .todoList {
-  @apply grid gap-[10px];
+  display: grid;
+  gap: 10px;
 }
 .todoCard {
-  @apply rounded-xl bg-white p-4;
+  border-radius: 12px;
+  padding: 16px;
   border: 1px solid #e8eeea; transition: border-color 0.18s ease, box-shadow 0.18s ease;
 }
 .todoCard:hover {
   border-color: #d3e2d8; box-shadow: 0 5px 16px rgba(33, 69, 51, 0.04);
 }
 .todoCardTop {
-  @apply flex items-start justify-between gap-[14px];
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
 }
 .todoTitle {
-  @apply text-ink text-sm font-bold;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
   margin: 0;
   line-height: 1.45;
 }
 .todoDescription {
-  @apply mt-[5px] text-xs text-[#7c8983];
+  margin-top: 5px;
+  font-size: 12px;
+  color: #7c8983;
   margin-bottom: 0;
   line-height: 1.55;
 }
 .todoMeta {
-  @apply flex items-center gap-[7px];
+  display: flex;
+  align-items: center;
+  gap: 7px;
   flex-wrap: wrap; margin-top: 12px;
 }
 .badge {
-  @apply inline-flex min-h-[23px] items-center gap-[5px] rounded-full bg-[#eff2f0] px-2 py-1 text-[10px] font-bold leading-none text-[#5e6964] whitespace-nowrap;
+  display: inline-flex;
+  min-height: 23px;
+  align-items: center;
+  gap: 5px;
+  border-radius: 9999px;
+  background-color: #eff2f0;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  color: #5e6964;
+  white-space: nowrap;
 }
 .statusPending {
-  @apply bg-[#eff2f0] text-[#68736d];
+  background-color: #eff2f0;
+  color: #68736d;
 }
 .statusProgress {
-  @apply bg-[#fff4df] text-[#93631f];
+  background-color: #fff4df;
+  color: #93631f;
 }
 .statusDone {
-  @apply bg-[#e6f5eb] text-[#28734f];
+  background-color: #e6f5eb;
+  color: #28734f;
 }
 .priorityHigh {
-  @apply bg-[#ffeded] text-[#a44646];
+  background-color: #ffeded;
+  color: #a44646;
 }
 .priorityMedium {
-  @apply bg-[#fff5e3] text-[#926020];
+  background-color: #fff5e3;
+  color: #926020;
 }
 .priorityLow {
-  @apply bg-[#edf5ef] text-[#587364];
+  background-color: #edf5ef;
+  color: #587364;
 }
 .weekBadge {
-  @apply bg-[#f3f6f4] text-[#63726b];
+  background-color: #f3f6f4;
+  color: #63726b;
 }
 .todoEditForm {
-  @apply grid grid-cols-2 gap-[10px];
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 .todoEditActions {
-  @apply col-span-full flex gap-2;
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
 }
 .emptyState {
-  @apply grid min-h-[165px] justify-items-center content-center rounded-[13px] bg-[#fbfdfb] p-[22px] text-center text-[#8a9690];
+  display: grid;
+  min-height: 165px;
+  justify-items: center;
+  align-content: center;
+  border-radius: 13px;
+  background-color: #fbfdfb;
+  padding: 22px;
+  text-align: center;
+  color: #8a9690;
   border: 1px dashed #dce7df;
 }
 .emptyIcon {
-  @apply grid h-[42px] w-[42px] place-items-center rounded-[13px] bg-[#ebf5ef] text-green;
+  display: grid;
+  height: 42px;
+  width: 42px;
+  place-items: center;
+  border-radius: 13px;
+  background-color: #ebf5ef;
+  color: var(--green);
   margin-bottom: 11px;
 }
 .emptyTitle {
-  @apply mb-1 text-[13px] font-bold text-[#405049];
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #405049;
   margin-top: 0;
 }
 .emptyCopy {
-  @apply m-0 text-[11px] text-[#89958f];
+  margin: 0;
+  font-size: 11px;
+  color: #89958f;
   line-height: 1.5;
 }
 @media (max-width: 700px) {
@@ -148,16 +231,19 @@
     align-self: stretch;
   }
   .filterButton {
-    @apply flex-1 justify-center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    justify-content: center;
   }
   .metricCard {
     min-height: 94px; padding: 13px;
   }
   .metricValue {
-    @apply text-[22px];
+    font-size: 22px;
   }
   .metricLabel {
-    @apply text-[10px];
+    font-size: 10px;
   }
 }
 @media (max-width: 520px) {
@@ -170,7 +256,7 @@
   .formGrid,
   .formGridThree,
   .todoEditForm {
-    @apply grid-cols-1;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
   .todoCreateAction .fieldLabel {
     display: none;
