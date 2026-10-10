@@ -1,0 +1,101 @@
+:root {
+  font-family: "Avenir Next", Inter, "Segoe UI", sans-serif;
+  color: #182322;
+  background: #f5f7f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+
+  --ink: #182322;
+  --muted: #71807c;
+  --line: #e7ece8;
+  --surface: #ffffff;
+  --canvas: #f5f7f5;
+  --green: #176b55;
+  --green-dark: #105340;
+  --green-soft: #e8f4ef;
+  --mint: #d8f0e5;
+  --amber: #a56420;
+  --red: #b94b4b;
+  --shadow: 0 10px 32px rgba(32, 62, 50, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--canvas);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--green-dark);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+}
+
+::selection {
+  color: var(--green-dark);
+  background: var(--mint);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(23, 107, 85, 0.28);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
